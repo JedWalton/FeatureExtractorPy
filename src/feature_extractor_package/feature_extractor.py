@@ -1,6 +1,6 @@
 import numpy as np
-import IO
-from part import part
+from src.feature_extractor_package import IO
+from src.feature_extractor_package.part import part
 from parts_list_heading import parts_list_headings
 
 

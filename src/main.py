@@ -1,6 +1,5 @@
 # This is a sample Python script.
-import IO
-import feature_extractor
+from src.feature_extractor_package import feature_extractor, IO
 
 if __name__ == '__main__':
     pdf = IO.read_pdf_from_file('./resources/assembly.pdf')
