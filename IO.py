@@ -8,10 +8,12 @@ def readpdf():
     return tables
 
 
-def writePartsListToCsv(item, material, partNumber, qty):
+def writePartsListToCsv(partsList, partsListHeadings):
     # table_df.to_csv('./resources/assembly.csv', index=False, header=False)
     # Write data to CSV file
     with open('parts_list.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        for i in range(len(item)):
-            writer.writerow([item[i], qty[i], partNumber[i], material[i]])
+
+        writer.writerow([partsListHeadings.itemHeading, partsListHeadings.materialHeading, partsListHeadings.partNumberHeading, partsListHeadings.qtyHeading])
+        for part in partsList:
+            writer.writerow([part.item, part.material, part.partNumber, part.qty])

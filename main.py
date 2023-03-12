@@ -2,5 +2,5 @@
 import generateItemListCSVFromPDFAssemblyDrawing
 
 if __name__ == '__main__':
-    generateItemListCSVFromPDFAssemblyDrawing.processPdfAndWriteToCsv()
+    generateItemListCSVFromPDFAssemblyDrawing.process_pdf_and_write_to_csv()
 
