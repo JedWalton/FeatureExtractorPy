@@ -16,7 +16,7 @@ def get_parts_list_headings(item, qty, part_number, material):
     return PartsListHeadings(item_heading, qty_heading, part_heading, material_heading)
 
 
-def trim_empty_num_py_array_elements(item, qty, part_number, material):
+def trim_numpy_array_elements(item, qty, part_number, material):
     item = item[1:-3]
     qty = qty[1:-3]
     part_number = part_number[1:-3]
