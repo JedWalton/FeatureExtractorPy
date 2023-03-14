@@ -21,15 +21,30 @@ def get_parts_list_headings(item, qty, part_number, material):
     return PartsListHeadings(item_heading, qty_heading, part_heading, material_heading)
 
 
-def trim_numpy_array_elements(item, qty, part_number, material):
-    item = item[1:-3]
-    qty = qty[1:-3]
-    part_number = part_number[1:-3]
-    part_number = part_number.astype(str)
-    part_number = np.char.replace(part_number, '\n', ' ')
-    material = material[1:-3]
-    return item, qty, part_number, material
+# def trim_whitespace(item, qty, part_number, material):
+#     item = item[1:-3]
+#     qty = qty[1:-3]
+#     part_number = part_number[1:-3]
+#     part_number = part_number.astype(str)
+#     part_number = np.char.replace(part_number, '\n', ' ')
+#     material = material[1:-3]
+#     return item, qty, part_number, material
 
+def trim_whitespace(item, qty, part_number, material):
+    # Use np.where() to find the indices of the non-empty elements in each array
+    item_indices = np.where(item != '')[0]
+    qty_indices = np.where(qty != '')[0]
+    part_number_indices = np.where(part_number != '')[0]
+    material_indices = np.where(material != '')[0]
+
+    # Extract the non-empty elements using the indices
+    item = item[item_indices]
+    qty = qty[qty_indices]
+    part_number = part_number[part_number_indices].astype(str)
+    part_number = np.char.replace(part_number, '\n', ' ')
+    material = material[material_indices]
+
+    return item, qty, part_number, material
 
 def read_pdf_and_generate_num_py_arrays_for_parts_list(pdf):
     # print(tables[0].df)
