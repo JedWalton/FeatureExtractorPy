@@ -15,28 +15,23 @@ Requirements analysis:
   column/s for up to 3 different types of tolerances.
 - Define which quadrant the dimension is in.
 - Read data from Bill of material (BOM)
-- Read data from title block
-- List geometric tolerances also
-
-
-The stuff needed from the title block is:
-
-Drawing number
-Revision
-Date
-Units
-Description
-Page number
+- Read data from title block:
+    - Drawing number
+    - Revision
+    - Date
+    - Units
+    - Description
+    - Page number
+- List geometric tolerances: 
+  - Runout
+  - Flatness
+  - Perpendicularity
+  - Parallelism
+  - Position
+  - Surface finish
+  - etc.
 
 See the box that says the tolerances of dimensions that are otherwise
 untoleranced - so use that to see what tolerance the dimensions are depending
 on the number of digits after the decimal poiny
 
-Most common geometric tolerances are
-
-Runout
-Flatness
-Perpendicularity
-Parallelism
-Position
-Surface finish
