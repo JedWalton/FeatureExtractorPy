@@ -1,15 +1,12 @@
 import csv
 import os
 
-import pytest as pytest
-
 from src.feature_extractor_package.feature_extractor import read_pdf_and_extract_parts_list
 
 
-@pytest.mark.xfail(reason="Verifies the csv is created correctly from resources/assembly/assembly.pdf")
 def test_read_pdf_and_extract_parts_list():
-    read_pdf_and_extract_parts_list('../resources/assembly/assembly.pdf', '../resources/csv/parts_list.csv')
-    with open('../resources/csv/parts_list.csv', 'r') as csv_file:
+    read_pdf_and_extract_parts_list('./test/resources/assembly/assembly.pdf', './test/resources/csv/parts_list.csv')
+    with open('./test/resources/csv/parts_list.csv', 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         for row in csv_reader:
@@ -30,5 +27,5 @@ def test_read_pdf_and_extract_parts_list():
                 assert row[3] != 'Material'
             line_count += 1
 
-        os.remove('../resources/csv/parts_list.csv')
+        os.remove('./test/resources/csv/parts_list.csv')
         assert line_count == 28

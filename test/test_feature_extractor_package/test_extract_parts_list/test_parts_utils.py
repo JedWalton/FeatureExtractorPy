@@ -2,19 +2,6 @@ from src.feature_extractor_package.extract_parts_list.extract_parts_list import 
 from src.feature_extractor_package.extract_parts_list.parts_utils import *
 
 
-# def test_get_parts_list_headings():
-#     pdf = read_pdf_from_file('../../resources/assembly/assembly.pdf')
-#     item, qty, part_number, material = read_pdf_and_generate_num_py_arrays_for_parts_list(pdf)
-#     partsListHeading = get_parts_list_headings(item, qty, part_number, material)
-
-# def test_read_pdf_and_generate_num_py_arrays_for_parts_list():
-#     pdf = read_pdf_from_file('../../resources/assembly/assembly.pdf')
-#     item, qty, part_number, material = read_pdf_and_generate_num_py_arrays_for_parts_list(pdf)
-#     assert item[0] == 'Item'
-#     assert qty[0] == 'Qty'
-#     assert part_number[0] == 'Part Number'
-#     assert material[0] == 'Material'
-
 def is_string_present_in_array(npArray, string):
     for element in npArray:
         if element == string:
@@ -24,7 +11,7 @@ def is_string_present_in_array(npArray, string):
 
 
 def test_extract_raw_parts_list_data_from_pdf():
-    pdf = read_pdf_from_file('../../resources/assembly/assembly.pdf')
+    pdf = read_pdf_from_file('./test/resources/assembly/assembly.pdf')
     item, qty, part_number, material = extract_raw_parts_list_data_from_pdf(pdf)
     assert is_string_present_in_array(item, 'Item'), "Item not found in item array"
     assert is_string_present_in_array(qty, 'Qty'), "Qty not found in qty array"
