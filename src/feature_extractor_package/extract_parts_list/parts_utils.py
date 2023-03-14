@@ -26,9 +26,9 @@ def trim_numpy_array_elements(item, qty, part_number, material):
     return item, qty, part_number, material
 
 
-def read_pdf_and_generate_num_py_arrays_for_parts_list(tables):
+def read_pdf_and_generate_num_py_arrays_for_parts_list(pdf):
     # print(tables[0].df)
-    part_table = tables[0].df
+    part_table = pdf[0].df
     data = part_table._data
     # Convert the data to Numpy arrays
     array_data = [block.values for block in data.blocks]
