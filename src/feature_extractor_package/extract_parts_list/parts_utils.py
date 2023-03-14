@@ -16,7 +16,7 @@ def get_parts_list_headings(item, qty, part_number, material):
     return PartsListHeadings(item_heading, qty_heading, part_heading, material_heading)
 
 
-def trim_empty_num_py_array_elements(item, qty, part_number, material):
+def trim_numpy_array_elements(item, qty, part_number, material):
     item = item[1:-3]
     qty = qty[1:-3]
     part_number = part_number[1:-3]
@@ -26,9 +26,9 @@ def trim_empty_num_py_array_elements(item, qty, part_number, material):
     return item, qty, part_number, material
 
 
-def read_pdf_and_generate_num_py_arrays_for_parts_list(tables):
+def read_pdf_and_generate_num_py_arrays_for_parts_list(pdf):
     # print(tables[0].df)
-    part_table = tables[0].df
+    part_table = pdf[0].df
     data = part_table._data
     # Convert the data to Numpy arrays
     array_data = [block.values for block in data.blocks]

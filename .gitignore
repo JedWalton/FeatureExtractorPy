@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+.virtualenv/
+pipenv/
+.poetry/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.pycharm-workspace.xml
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*.py,cover
+.cover/
+
+# Other
+*.log
+*.swp
+.DS_Store
