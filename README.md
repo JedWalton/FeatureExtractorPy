@@ -1,5 +1,7 @@
 Setup:
 -------
+From project root, FeatureExtractorPy/ 
+
 Create venv:
 `python3 -m venv env`
 
