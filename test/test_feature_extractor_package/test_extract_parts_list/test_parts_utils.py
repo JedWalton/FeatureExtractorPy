@@ -1,4 +1,3 @@
-
 from src.feature_extractor_package.extract_parts_list.parts_utils import *
 
 
@@ -19,5 +18,13 @@ def test_get_parts_list_headings():
     assert parts_list_headings.materialHeading == 3
 
 
-
-
+def test_trim_numpy_array_elements():
+    item = np.array([1, 2, 3])
+    qty = np.array([1, 2, 3])
+    part_number = np.array([1, 2, 3])
+    material = np.array([1, 2, 3])
+    item, qty, part_number, material = trim_numpy_array_elements(item, qty, part_number, material)
+    assert item[0] == 2
+    assert qty[0] == 2
+    assert part_number[0] == 2
+    assert material[0] == 2
