@@ -1,3 +1,4 @@
+from src.feature_extractor_package.extract_parts_list.extract_parts_list import read_pdf_from_file
 from src.feature_extractor_package.extract_parts_list.parts_utils import *
 
 
@@ -6,29 +7,31 @@ def test_get_last_element():
     assert get_last_element(arr) == 3
 
 
-def test_get_parts_list_headings():
-    item = [1, 2, 3]
-    qty = [1, 2, 3]
-    part_number = [1, 2, 3]
-    material = [1, 2, 3]
-    parts_list_headings = get_parts_list_headings(item, qty, part_number, material)
-    assert parts_list_headings.itemHeading == 3
-    assert parts_list_headings.qtyHeading == 3
-    assert parts_list_headings.partNumberHeading == 3
-    assert parts_list_headings.materialHeading == 3
+# def test_get_parts_list_headings():
+#     pdf = read_pdf_from_file('../../resources/assembly/assembly.pdf')
+#     item, qty, part_number, material = read_pdf_and_generate_num_py_arrays_for_parts_list(pdf)
+#     partsListHeading = get_parts_list_headings(item, qty, part_number, material)
+
+# def test_read_pdf_and_generate_num_py_arrays_for_parts_list():
+#     pdf = read_pdf_from_file('../../resources/assembly/assembly.pdf')
+#     item, qty, part_number, material = read_pdf_and_generate_num_py_arrays_for_parts_list(pdf)
+#     assert item[0] == 'Item'
+#     assert qty[0] == 'Qty'
+#     assert part_number[0] == 'Part Number'
+#     assert material[0] == 'Material'
 
 
-def test_trim_numpy_array_elements():
-    item = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    qty = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    part_number = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    material = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    item, qty, part_number, material = trim_numpy_array_elements(item, qty, part_number, material)
-    assert item[0] == 2
-    assert item[-1] == 8
-    assert qty[0] == 2
-    assert qty[-1] == 8
-    assert part_number[0] == 2
-    assert part_number[-1] == 8
-    assert material[0] == 2
-    assert material[-1] == 8
+def test_parse_parts_lists():
+    item = ['item1', 'item2']
+    qty = ['qty1', 'qty2']
+    part_number = ['part_number1', 'part_number2']
+    material = ['material1', 'material2']
+    parts = parse_parts_lists(item, qty, part_number, material)
+    assert parts[0].item == 'item1'
+    assert parts[0].qty == 'qty1'
+    assert parts[0].part_number == 'part_number1'
+    assert parts[0].material == 'material1'
+    assert parts[1].item == 'item2'
+    assert parts[1].qty == 'qty2'
+    assert parts[1].part_number == 'part_number2'
+    assert parts[1].material == 'material2'

@@ -8,6 +8,11 @@ def get_last_element(arr):
     return arr[-1]
 
 
+def delete_last_element(arr):
+    arr = np.delete(arr, -1)
+    return arr
+
+
 def get_parts_list_headings(item, qty, part_number, material):
     item_heading = get_last_element(item)
     qty_heading = get_last_element(qty)
@@ -42,6 +47,6 @@ def read_pdf_and_generate_num_py_arrays_for_parts_list(pdf):
 
 def parse_parts_lists(item, qty, part_number, material):
     parts = []
-    for i in range(len(item)):
+    for i in range(len(item) - 1):
         parts.append(Part(item[i], qty[i], part_number[i], material[i]))
     return parts

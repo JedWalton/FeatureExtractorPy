@@ -43,3 +43,4 @@ htmlcov/
 *.log
 *.swp
 .DS_Store
+*.pyc
