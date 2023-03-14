@@ -1,8 +1,19 @@
 Setup:
 -------
+Create venv:
+`python3 -m venv env`
+
+Activate venv:
+`source myenv/bin/activate` or on Windows: `myenv\Scripts\activate.bat`
+
+To deactivate:
+`deactivate`
+
+To install requirements:
+
 `$ pip install -r requirements.txt`
 
-to save dependencies, run:
+To save dependencies, run:
 
 `$ pip freeze > requirements.txt`
 
