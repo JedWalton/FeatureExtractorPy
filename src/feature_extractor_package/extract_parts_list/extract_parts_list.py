@@ -20,9 +20,9 @@ def read_pdf_from_file(url):
     return pdf
 
 
-def write_parts_list_to_csv(parts_list, parts_list_headings):
+def write_parts_list_to_csv(parts_list, parts_list_headings, csv_url):
     # Write data to CSV file
-    with open('./parts_list.csv', 'w', newline='') as csvfile:
+    with open(csv_url, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
         writer.writerow([parts_list_headings.itemHeading, parts_list_headings.qtyHeading, parts_list_headings.partNumberHeading, parts_list_headings.materialHeading])
