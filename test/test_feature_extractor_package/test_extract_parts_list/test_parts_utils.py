@@ -1,11 +1,5 @@
-
 from src.feature_extractor_package.extract_parts_list.extract_parts_list import read_pdf_from_file
 from src.feature_extractor_package.extract_parts_list.parts_utils import *
-
-
-def test_get_last_element():
-    arr = [1, 2, 3]
-    assert get_last_element(arr) == 3
 
 
 # def test_get_parts_list_headings():

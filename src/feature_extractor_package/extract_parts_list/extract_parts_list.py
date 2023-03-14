@@ -3,12 +3,12 @@ import csv
 from camelot import io as camelot
 
 from src.feature_extractor_package.extract_parts_list.parts_utils import \
-    read_pdf_and_generate_num_py_arrays_for_parts_list, trim_whitespace, get_parts_list_headings, \
+    extract_raw_parts_list_data_from_pdf, trim_whitespace, get_parts_list_headings, \
     parse_parts_lists
 
 
 def extract_parts_list_from_pdf_and_write_to_csv(pdf):
-    item, qty, part_number, material = read_pdf_and_generate_num_py_arrays_for_parts_list(pdf)
+    item, qty, part_number, material = extract_raw_parts_list_data_from_pdf(pdf)
     item, qty, part_number, material = trim_whitespace(item, qty, part_number, material)
     parts_list_headings, item, qty, part_number, material = get_parts_list_headings(item, qty, part_number, material)
     parts_list = parse_parts_lists(item, qty, part_number, material)

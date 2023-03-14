@@ -4,33 +4,17 @@ from src.feature_extractor_package.extract_parts_list.part import Part
 from src.feature_extractor_package.extract_parts_list.partsListHeading import PartsListHeadings
 
 
-def get_last_element(arr):
-    return arr[-1]
-
-
 def pop(arr):
     # Get the last element of the array
     last_element = arr[-1]
-
     # Remove the last element from the array using slicing
     arr = arr[:-1]
-
     # Return the popped element and the modified array
     return last_element, arr
 
 
-def remove_last_element(arr):
-    arr = np.delete(arr, -1)
-    return arr
-
-
-def delete_last_element(arr):
-    arr = np.delete(arr, -1)
-    return arr
-
-
 def get_parts_list_headings(item, qty, part_number, material):
-    item = remove_last_element(item)
+    item = np.delete(item, -1)
     item_heading, item = pop(item)
     qty_heading, qty = pop(qty)
     part_heading, part_number = pop(part_number)
@@ -65,7 +49,7 @@ def trim_whitespace(item, qty, part_number, material):
     return item, qty, part_number, material
 
 
-def read_pdf_and_generate_num_py_arrays_for_parts_list(pdf):
+def extract_raw_parts_list_data_from_pdf(pdf):
     # print(tables[0].df)
     part_table = pdf[0].df
     data = part_table._data
