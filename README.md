@@ -29,12 +29,12 @@ Requirements analysis:
 - Define which quadrant the dimension is in.
 - Read data from Bill of material (BOM)
 - Read data from title block:
-    - Drawing number
-    - Revision
-    - Date
-    - Units
-    - Description
-    - Page number
+  - Drawing number
+  - Revision
+  - Date
+  - Units
+  - Description
+  - Page number
 - List geometric tolerances: 
   - Runout
   - Flatness
