@@ -1,9 +1,10 @@
-## SETUP
-in root run:
-$ pip install -r requirements.txt
+Setup:
+-------
+`$ pip install -r requirements.txt`
 
 to save dependencies, run:
-$ pip freeze > requirements.txt
+
+`$ pip freeze > requirements.txt`
 
 
 

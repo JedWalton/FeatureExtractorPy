@@ -12,7 +12,7 @@ def extract_parts_list_from_pdf_and_write_to_csv(pdf):
     item, qty, part_number, material = trim_numpy_array_elements(item, qty, part_number, material)
     parts_list_headings = get_parts_list_headings(item, qty, part_number, material)
     parts_list = parse_parts_lists(item, qty, part_number, material)
-    write_parts_list_to_csv(parts_list, parts_list_headings)
+    return parts_list, parts_list_headings
 
 
 def read_pdf_from_file(url):
