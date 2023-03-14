@@ -12,13 +12,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
+    name='FeatureExtractorPy',
     version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    description='Feature extractor for assembly instructions',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Jed Walton',
+    author_email='jedwalton98@@gmail.com',
+    url='https://github.com/JedWalton/FeatureExtractorPy',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('test', 'docs'))
 )

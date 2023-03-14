@@ -1,6 +1,13 @@
 ## Setup:
 ---------
+Note: PyCharm can handle this for you.
+
+
 From project root, FeatureExtractorPy/ 
+
+#### Interpreter:
+
+`python3.9`
 
 #### Create venv:
 
@@ -18,6 +25,7 @@ From project root, FeatureExtractorPy/
 #### To save dependencies, run:
 
 `$ pip freeze > requirements.txt`
+
 
 #### To deactivate venv:
 
