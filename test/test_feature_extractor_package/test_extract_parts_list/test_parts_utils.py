@@ -1,4 +1,4 @@
-from src.feature_extractor_package.extract_parts_list.extract_parts_list import read_pdf_from_file
+from src.feature_extractor_package.feature_extractor import read_pdf_from_file
 from src.feature_extractor_package.extract_parts_list.parts_utils import *
 
 
@@ -11,7 +11,7 @@ def is_string_present_in_array(npArray, string):
 
 
 def test_extract_raw_parts_list_data_from_pdf():
-    pdf = read_pdf_from_file('./test/resources/assembly/assembly.pdf')
+    pdf = read_pdf_from_file('./test/resources/assembly/assembly_drawing.pdf')
     item, qty, part_number, material = extract_raw_parts_list_data_from_pdf(pdf)
     assert is_string_present_in_array(item, 'Item'), "Item not found in item array"
     assert is_string_present_in_array(qty, 'Qty'), "Qty not found in qty array"
