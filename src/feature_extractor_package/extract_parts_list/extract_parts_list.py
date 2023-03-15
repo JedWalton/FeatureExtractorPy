@@ -16,7 +16,7 @@ def extract_parts_list_from_pdf_and_write_to_csv(pdf):
 
 
 def read_pdf_from_file(url):
-    pdf = camelot.read_pdf(url)
+    pdf = camelot.read_pdf(url, backend='poppler')
     return pdf
 
 
