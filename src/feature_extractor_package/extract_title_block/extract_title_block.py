@@ -17,6 +17,6 @@ def write_title_block_to_csv(title_block, csv_url):
     with open(csv_url, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
-        writer.writerow(["Title", "Date", "Scale", "Drawn By", "Orthographic Projection"])
-        writer.writerow([title_block.title, title_block.date, title_block.scale, title_block.drawn_by,
+        writer.writerow(["Title", "Date", "Scale", "Units", "Drawn By", "Orthographic Projection"])
+        writer.writerow([title_block.title, title_block.date, title_block.scale, title_block.units, title_block.drawn_by,
                          title_block.orthographic_projection])

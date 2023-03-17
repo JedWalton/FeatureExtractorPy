@@ -1,4 +1,4 @@
-from test.test_feature_extractor_package.test_extract_title_block.titleBlock import TitleBlock
+from src.feature_extractor_package.extract_title_block.titleBlock import TitleBlock
 
 
 def extract_raw_title_block_data_from_pdf(pdf):
@@ -15,10 +15,9 @@ def extract_raw_title_block_data_from_pdf(pdf):
 
 
 def process_raw_title_block_data(table):
+    print("table: ", table)
     parts = []
     lines = table[0].split('\n')
-
-
     line = lines[1] + " " + lines[2]
     parts.append(line)
     lines = table[1].split('\n')
@@ -27,6 +26,7 @@ def process_raw_title_block_data(table):
     line = lines[4]
     parts.append(line)
     line = lines[5]
+    parts.append(line)
     lines = table[2].split('\n')
     line = lines[1]
     parts.append(line)
@@ -38,4 +38,4 @@ def process_raw_title_block_data(table):
 
 def parse_title_block(unprocessed_table):
     return TitleBlock(unprocessed_table[0], unprocessed_table[1],
-                      unprocessed_table[2], unprocessed_table[3], unprocessed_table[4])
+                      unprocessed_table[2], unprocessed_table[3], unprocessed_table[4], unprocessed_table[5])
