@@ -1,7 +1,7 @@
 from src.feature_extractor_package.extract_title_block.titleBlock import TitleBlock
 
 
-def test_TitleBlock_init():
+def test_titleBlock_init():
     title = "Example Title"
     date = "01/01/2021"
     scale = "1:10"
