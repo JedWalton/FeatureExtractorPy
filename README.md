@@ -1,3 +1,12 @@
+## Approach:
+------------
+
+Make the algorithm work for 1 PDF.
+Have full test suite coverage.
+Introduce 2nd PDF.
+Modify code as little as possible to make all tests pass on 2 PDF.
+Rinse and repeat until it reliably works for n PDFs.
+
 ## Setup:
 ---------
 Note: PyCharm can handle this for you.
@@ -110,3 +119,4 @@ the direction of unfolding the views.
 ## Libraries:
 -------------
 https://camelot-py.readthedocs.io/en/master/user/advanced.html
+
